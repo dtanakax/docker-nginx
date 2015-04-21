@@ -45,6 +45,7 @@ SSL or Basic認証を有効にするには
 
 以下のボリュームが利用可能
 
+    /var/www/html       # ドキュメントルート
     /etc/nginx          # Nginx各種設定
     /var/cache/nginx    # Nginxキャッシュ
 
