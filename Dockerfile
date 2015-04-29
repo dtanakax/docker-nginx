@@ -5,6 +5,7 @@ FROM tanaka0323/debianjp:wheezy
 MAINTAINER Daisuke Tanaka, tanaka@infocorpus.com
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV NGINX_VERSION 1.9.0
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
