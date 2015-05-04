@@ -6,7 +6,7 @@ docker-nginx
 Base Docker Image
 ---------------------
 
-[dtanakax/debianjp](https://hub.docker.com/u/dtanakax/)
+[dtanakax/debianjp](https://registry.hub.docker.com/u/dtanakax/debianjp/)
 
 説明
 ---------------------
