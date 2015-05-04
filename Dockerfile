@@ -1,8 +1,8 @@
 # Set the base image
-FROM tanaka0323/debianjp:wheezy
+FROM dtanakax/debianjp:wheezy
 
 # File Author / Maintainer
-MAINTAINER Daisuke Tanaka, tanaka@infocorpus.com
+MAINTAINER Daisuke Tanaka, dtanakax@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV NGINX_VERSION 1.9.0
@@ -15,7 +15,7 @@ RUN wget http://nginx.org/keys/nginx_signing.key -O- | apt-key add - && \
     echo "deb http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list
 
 RUN apt-get update && \
-    apt-get install -y ca-certificates nginx supervisor && \
+    apt-get install -y ca-certificates nginx && \
     rm -rf /var/lib/apt/lists/*
 RUN apt-get clean all
 
@@ -26,8 +26,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 RUN mkdir -p /var/www/html
 RUN chown -R nginx:nginx /var/www/
 
-# Adding the configuration file of the Supervisor
-ADD supervisord.conf /etc/
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
@@ -44,4 +42,4 @@ ENTRYPOINT ["./start.sh"]
 EXPOSE 80 443
 
 # Executing sh
-CMD ["supervisord", "-n"]
+CMD ["/usr/sbin/nginx"]
