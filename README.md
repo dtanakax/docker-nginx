@@ -16,14 +16,6 @@ Nginx Dockerコンテナ作成設定
 使用方法
 ---------------------
 
-git pull後に
-
-    $ cd docker-nginx
-
-イメージ作成
-
-    $ docker build -t dtanakax/nginx .
-
 起動
 
     $ docker run --name <name> -d -p 8081:80 -e VIRTUAL_HOST=<hostname> -ti dtanakax/nginx-php
