@@ -5,14 +5,14 @@ FROM dtanakax/debianjp:wheezy
 MAINTAINER Daisuke Tanaka, dtanakax@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV NGINX_VERSION 1.9.0
+ENV NGINX_VERSION 1.8.0
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates wget
 
 RUN wget http://nginx.org/keys/nginx_signing.key -O- | apt-key add - && \
-    echo "deb http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list
+    echo "deb http://nginx.org/packages/debian/ wheezy nginx" >> /etc/apt/sources.list
 
 RUN apt-get update && \
     apt-get install -y ca-certificates nginx && \
