@@ -24,7 +24,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 # Adding the default file
 RUN mkdir -p /var/www/html
-RUN chown -R nginx:nginx /var/www/
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
